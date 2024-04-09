@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Configuración del servicio MYSQL</title>
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+  }
+  
+  header {
+    width: 100%;
+    height: 50vh;
+    background: url('images/Que_tipos_de_sistemas_operativos_existen.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+  }
+  
+  header h1 {
+    font-size: 3em;
+    margin: 0;
+  }
+  
+  header p {
+    font-size: 1.2em;
+    margin-top: 0.5em;
+  }
+  
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; 
+    padding: 10px; 
+    max-width: 1280px; 
+    margin: auto; 
+  }
+  
+  .card {
+    width: calc(25% - 20px); 
+    margin: 10px; 
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+  }
+  
+  .card-content {
+    padding: 20px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  
+  .card-content h2 {
+    margin-top: 0;
+    color: #333;
+  }
+  
+  .card-content p {
+    margin-bottom: 0;
+    color: #666;
+  }
+  
+ 
+  @media (max-width: 1024px) {
+    .card {
+      width: calc(50% - 20px); 
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .card {
+      width: calc(100% - 20px); 
+    }
+  }
+
+  .btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Añade un margen superior si es necesario */
+    width: 100%; /* Asegúrate de que el contenedor tenga un ancho completo */
+}
+
+
+.btn-index {
+    padding: 8px 16px; /* Un padding más pequeño para un botón más pequeño */
+    background-image: linear-gradient(45deg,#689cef, #7841c4); /* Gradiente inicial */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 25px; /* Bordes redondeados para el botón */
+    font-size: 14px; /* Un tamaño de fuente más pequeño */
+    font-weight: bold;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Sombra suave para efecto 3D */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Transición suave para los efectos */
+    cursor: pointer;
+}
+
+.btn-index:hover {
+    background-image: linear-gradient(45deg, #7A55D3, #C884A6); /* Cambio del gradiente al pasar el ratón */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); /* Sombra más pronunciada */
+}
+
+
+
+.btn-index {
+    padding: 8px 16px; /* Un padding más pequeño para un botón más pequeño */
+    background-image: linear-gradient(45deg, #689cef, #7841c4); /* Gradiente inicial */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 25px; /* Bordes redondeados para el botón */
+    font-size: 14px; /* Un tamaño de fuente más pequeño */
+    font-weight: bold;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Sombra suave para efecto 3D */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Transición suave para los efectos */
+    cursor: pointer;
+}
+
+.btn-index:hover {
+    background-image: linear-gradient(45deg, #7A55D3, #C884A6); /* Cambio del gradiente al pasar el ratón */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); /* Sombra más pronunciada */
+}
+
+    
+</style>
+</head>
+<body>
+
+<header>
+  <h1>MySQL Server</h1>
+  <p>MySQL Server es un motor de base de datos relacional de código abierto, parte esencial del RDBMS MySQL, compatible con Windows Server y otras plataformas. Destaca por su fiabilidad, escalabilidad y facilidad de uso, siendo clave para aplicaciones web y entornos LAMP. Su amplia adopción se debe a su rendimiento robusto y la flexibilidad que ofrece para el desarrollo y la gestión de datos.
+  <br><br>Configuración paso a paso:...</p>
+</header>
+
+<div class="container">
+<div class="card">
+  <img src="images/MySQL1.jpg" alt="Paso1">
+  <div class="card-content">
+    <h2>Paso 1</h2>
+    <p>Para comenzar necesitamos descargar MySQL server por lo que accedemos a la <a href="https://dev.mysql.com/downloads/mysql/">página web oficial</a> para descargar aquel que se adecúe a nuestras necesidades.</p>
+  </div>
+</div>
+
+<div class="card">
+  <img src="images/MySQL2.jpg" alt="Paso2">
+  <div class="card-content">
+    <h2>Paso 2</h2>
+    <p>Una vez descargado, hacemos doble clik para instalarlo</p>
+  </div>
+</div>
+
+<div class="card">
+  <img src="images/MySQL3.jpg" alt="Paso3">
+  <div class="card-content">
+    <h2>Paso 3</h2>
+    <p>Dentro del instalador seleccionamos "Custom" en el apartado "Setup Type" y hacemos click en Next</p>
+  </div>
+</div>
+
+<div class="card">
+  <img src="images/MySQL4.jpeg" alt="Paso4">
+  <div class="card-content">
+    <h2>Paso 4</h2>
+    <p>Seleccionamos los productos que necesitaremos y hacemos click en next. Como referencia, se seleccionará los paquetes mostrados en la imagen</p>
+  </div>
+</div>
+
+
+
+<div class="card">
+        <img src="images/MySQL5.jpeg" alt="Paso5">
+        <div class="card-content">
+        <h2>Paso 5</h2>
+        <p>En "Check Requirements" se deben instalar los requerimientos unicamente seleccionando el producto y luego haciendo click en Execute.</p>
+        </div>
+    </div>
+    
+    <div class="card">
+        <img src="images/MySQL6.jpeg" alt="Paso6">
+        <div class="card-content">
+        <h2>Paso 6</h2>
+        <p>Si ambos productos tienen palomitas verdes, significa que hemos hecho el paso correctamente y podemos hacer click en Next para continuar</p>
+        </div>
+    </div>
+    
+    <div class="card">
+        <img src="images/MySQL7.jpg" alt="Paso7">
+        <div class="card-content">
+        <h2>Paso 7</h2>
+        <p>En "Instalation" debemos hacer click en Execute para instalar todo hasta que, al igual que el paso anterior, tenga palomitas verdes. Después hacemos click en Next</p>
+        </div>
+    </div>
+    
+    <div class="card">
+        <img src="images/MySQL8.jpg" alt="Paso8">
+        <div class="card-content">
+        <h2>Paso 8</h2>
+        <p>En "Product Configuration" solo debemos hacer click en Next para pasar a la siguiente configuración</p>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="card">
+        <img src="images/MySQL9.jpeg" alt="Paso9">
+        <div class="card-content">
+        <h2>Paso 9</h2>
+        <p>En "Type y Networking". Seleccionamos en "Config Type" la opción Development Computer, esto con el fin de no consumir muchos recursos. Como referencia, la ventana debería de verse tal cual como se muestra en la imagen</p>
+        </div>
+    </div>
+    
+    <div class="card">
+        <img src="images/MySQL10.jpg" alt="Paso10">
+        <div class="card-content">
+        <h2>Paso 10</h2>
+        <p>En "Authentication Method" se elige el método de autenticación, en este caso dejaremos la opción ya seleccionada y damos click en Next</p>
+        </div>
+    </div>
+    
+    <div class="card">
+        <img src="images/MySQL11.jpg" alt="Paso11">
+        <div class="card-content">
+        <h2>Paso 11</h2>
+        <p>En "Accounts and Roles" pondremos una contraseña para cada usuario. Solo es necesario una contraseña para el super usuario de MySQL. Presionamos Next</p>
+        </div>
+    </div>
+    
+    <div class="card">
+        <img src="images/MySQL12.jpg" alt="Paso12">
+        <div class="card-content">
+        <h2>Paso 12</h2>
+        <p>En "Windows Service" es necesario tener las opciones marcadas como se muestra en la imagen, las opciones son: "Configure MySQL Server as a Windows Service", "Start the MySQL Server as System Startup" y "Standard System Account" todo esto con el fin de arrancar el servidor cuando inicie la máquina</p>
+        </div>
+    </div>
+    
+    <div class="container">
+      <div class="card">
+        <img src="images/MySQL13.jpg" alt="Paso13">
+        <div class="card-content">
+          <h2>Paso 13</h2>
+          <p>En "Server File Permissions" no es necesario modificar nada, así que solo hacemos click en Next</p>
+        </div>
+      </div>
+      
+      <div class="card">
+        <img src="images/MySQL14.jpg" alt="Paso14">
+        <div class="card-content">
+          <h2>Paso 14</h2>
+          <p>En "Apply Configuration" aplicamos las configuraciones haciendo click en Execute, después hacemos click en Finish para terminar con el proceso</p>
+        </div>
+      </div>
+      
+      <div class="card">
+        <img src="images/MySQL15.jpg" alt="Paso15">
+        <div class="card-content">
+          <h2>Paso 15</h2>
+          <p>Seguidamente tendremos que realizar otra configuración, por lo que hacemos click en Next</p>
+        </div>
+      </div>
+      
+      <div class="card">
+        <img src="images/MySQL16.jpg" alt="Paso16">
+        <div class="card-content">
+          <h2>Paso 16</h2>
+          <p>En "Connect To Server" usaremos el user "root" y la contraseña que elegimos anteriormente, seguidamente hacemos click en check. Revisamos que la conexión se halla hecho correctamente, después hacemos click en Next</p>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="card">
+          <img src="images/MySQL17.jpg" alt="Paso17">
+          <div class="card-content">
+            <h2>Paso 17</h2>
+            <p>En "Apply Configuration" solo es necesario hacer click en Execute para que se apliquen las configuraciones. Cuando todo esté correcto, hacemos click en Finish</p>
+          </div>
+        </div>
+        
+        <div class="card">
+          <img src="images/MySQL18.jpg" alt="Paso18">
+          <div class="card-content">
+            <h2>Paso 18</h2>
+            <p>Finalmente, si realizamos todo correctamente, estaremos en la pestaña "Installation Complete", por lo que hacemos click en Finish, y procederemos a revisar que la conexión a la base de datos funciona correctamente.</p>
+          </div>
+        </div>
+        
+        <div class="card">
+          <img src="images/MySQL19.jpg" alt="Paso19" style="object-fit: contain;">
+          <div class="card-content">
+            <h2>Paso 19</h2>
+            <p>Dentro de la PowerShell del servidor, ejecutamos el siguiente comando tal cual como se muestra en la imagen: mysql -u root -h localhost -p</p>
+          </div>
+        </div>
+        
+        <div class="card">
+          <img src="images/MySQL20.jpg" alt="Paso20" style="object-fit: contain;">
+          <div class="card-content">
+            <h2>Paso 20</h2>
+            <p>Nos pedirá una contraseña para el usuario root, así que ingresamos la contraseña que elegimos anteriormente. Una vez hecho eso, podreoms acceder al monitor de MySQL</p>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="card">
+            <img src="images/MySQL21.jpg" alt="Paso21" style="object-fit: contain;">
+            <div class="card-content">
+              <h2>Paso 21</h2>
+              <p>Crearemos un usuario con este comando: CREATE USER 'nombre_usuario'@'%' IDENTIFIED BY 'contraseña'; Así como se muestra en la imagen.<br>Se usa % para que cualquier host acceda a la base de datos con este usuario. </p>
+            </div>
+          </div>
+          
+          <div class="card">
+            <img src="images/MySQL22.jpg" alt="Paso22" style="object-fit: contain;">
+            <div class="card-content">
+              <h2>Paso 22</h2>
+              <p>Seguidamente le otorgamos todos los privilegios a nuestro usuario creado con el siguiente comando: GRANT ALL PRIVILEGES ON *.* TO 'nombre_usuario'@'%' WITH GRANT OPTION; <br>Como referencia, se debe de ver como se muestra en la imagen.<p>
+            </div>
+          </div>
+          
+          <div class="card">
+            <img src="images/MySQL23.jpg" alt="Paso23" style="object-fit: contain;">
+            <div class="card-content">
+              <h2>Paso 23</h2>
+              <p>Una vez teniendo todo configurado, podremos conectarnos en remoto con el siguiente comando: mysql -u nombre_usuario -h direccion_ip_o_host_remoto -p <br>Como se muestra en la imagen<br>Después ingresamos la contraseña y listo</p>
+            </div>
+          </div>
+          
+
+</div>
+<div class="btn-container">
+    <a href="index.html" class="btn-index">Index</a>
+  </div>
+  
+</body>
+</html>

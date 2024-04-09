@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Configuracion de Windows Server</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding-top: 100px; /* Espacio para el header */
+    background-color: #f3f3f3;
+    position: relative; /* Posición relativa para posicionar absolutamente el texto */
+  }
+  header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 10; /* Más alto que el texto y las tarjetas */
+  }
+  .text-container {
+    text-align: center;
+    position: absolute; /* Posición absoluta para superponer entre el header y las tarjetas */
+    top: 500px; /* Abajo del header */
+    left: 0;
+    right: 0;
+    z-index: 5; /* Sobre las tarjetas pero debajo del header */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Ligeramente transparente */
+  }
+  .carousel-container {
+    max-width: 800px;
+    margin: 20px auto 0; /* Alinea al centro y agrega espacio desde la parte superior */
+    position: relative;
+    z-index: 1; /* Debajo del texto */
+  }
+  .carousel {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espacio entre las cartas */ 
+    margin-top:20px;
+  }
+.card {
+    width: 500px; /* Ajusta este valor según tus preferencias */
+    height: 350px; /* Ajusta este valor según tus preferencias */
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+  .card img {
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+  }
+  .card-content {
+    padding: 10px;
+    height: 40%;
+    background-color: #fff;
+    border-radius: 0 0 10px 10px;
+  }
+  .card-title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .card-description {
+    font-size: 14px;
+    color: #555;
+  }
+  .card:hover {
+    transform: translateY(-10px); /* Efecto de elevación al pasar el mouse */
+  }
+  .card.active {
+    width: 500px; /* Ajusta este valor según tus preferencias */
+    height: 350px; /* Ajusta este valor según tus preferencias */
+    z-index: 2; /* Asegura que la carta activa esté por encima de las otras */
+}
+
+</style>
+</head>
+<body>
+  <header>
+    <h1>Taller de sistemas operativos</h1>
+    <h2>Configuración de Windows Server</h2>
+  </header>
+  <div style="text-align: center; padding: 20px; margin-top: 50px;">
+    <p>Windows Server 2019 es un sistema operativo de servidor diseñado para proporcionar una plataforma robusta y segura para la administración de redes, aplicaciones y servicios en entornos empresariales. En nuestro caso configuramos uno que facilita la gestión de identidades y accesos a través de Active Directory (AD), permite la resolución de nombres de dominio con el Sistema de Nombres de Dominio (DNS), asigna direcciones IP automáticamente con el Protocolo de Configuración Dinámica de Host (DHCP), soporta la creación y gestión de sitios web con Servicios de Información de Internet (IIS) y puede gestionar bases de datos con MySQL. Esta configuración ofrece una solución integral para mejorar la eficiencia operativa, asegurar la comunicación y el acceso a los recursos de la red, y facilitar el desarrollo y hospedaje de aplicaciones web y servicios de bases de datos.</p>
+  </div>
+<div class="carousel-container">
+  <div class="carousel" id="carousel">
+    <div class="card" onclick="selectImage(0)">
+      <a href="templateAD_DS.html">
+      <img src="images/ad ds.jpg" alt="Imagen 1">
+      <div class="card-content">
+        <h3 class="card-title">Configuracion de AD DS</h3>
+        <p class="card-description">Paso a paso de la configuración del AD DS en Windows Server</p>
+      </div>
+    </div>
+    <div class="card" onclick="selectImage(1)">
+      <a href="templateDHCP.html">
+      <img src="images/dhcp.jpg" alt="Imagen 2">
+      <div class="card-content">
+        <h3 class="card-title">Configuracion de DHCP</h3>
+        <p class="card-description">Paso a paso de la configuración del DHCP en Windows Server</p>
+      </div>
+    </div>
+    <div class="card" onclick="selectImage(2)">
+      <a href="templateDNS.html">
+      <img src="images/servidores-DNS.jpg" alt="Imagen 3">
+      <div class="card-content">
+        <h3 class="card-title">Configuracion de DNS</h3>
+        <p class="card-description">Paso a paso de la configuración del DNS en Windows Server</p>
+      </div>
+    </div>
+    <div class="card" onclick="selectImage(3)">
+      <a href="templateIIS.html">
+      <img src="images/iis.png" alt="Imagen 4">
+      <div class="card-content">
+        <h3 class="card-title">Configuracion de IIS</h3>
+        <p class="card-description">Paso a paso de la configuración del IIS en Windows Server</p>
+      </div>
+    </div>
+    <div class="card" onclick="selectImage(4)">
+      <a href="templateMySQL.html">
+      <img src="images/mysql.jpg" alt="Imagen 5">
+      <div class="card-content">
+        <h3 class="card-title">Configuracion de MySQL</h3>
+        <p class="card-description">Paso a paso de la configuración del MySQL en Windows Server</p>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  let currentIndex = 0;
+
+  function selectImage(index) {
+    currentIndex = index;
+    updateCarousel();
+  }
+
+function updateCarousel() {
+    const cards = document.querySelectorAll('.card');
+    cards.forEach((card, index) => {
+        if (index === currentIndex) {
+            card.classList.add('active'); // Añadir clase 'active' a la carta en el centro
+        } else {
+            card.classList.remove('active'); // Eliminar clase 'active' de las demás cartas
+        }
+    });
+}
+
+</script>
+</body>
+</html>

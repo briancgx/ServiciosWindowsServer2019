@@ -1,0 +1,328 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Configuracion del servicio AD-DS</title>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f4f4f4;
+      }
+      
+      header {
+        width: 100%;
+        height: 50vh;
+        background: url('images/Que_tipos_de_sistemas_operativos_existen.jpg') no-repeat center center;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: #fff;
+      }
+      
+      header h1 {
+        font-size: 3em;
+        margin: 0;
+      }
+      
+      header p {
+        font-size: 1.2em;
+        margin-top: 0.5em;
+      }
+      
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start; 
+        padding: 10px; 
+        max-width: 1280px; 
+        margin: auto; 
+      }
+      
+      .card {
+        width: calc(25% - 20px); 
+        margin: 10px; 
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+      
+      .card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        display: block;
+      }
+      
+      .card-content {
+        padding: 20px;
+        font-size: 14px;
+        line-height: 1.6;
+      }
+      
+      .card-content h2 {
+        margin-top: 0;
+        color: #333;
+      }
+      
+      .card-content p {
+        margin-bottom: 0;
+        color: #666;
+      }
+      
+     
+      @media (max-width: 1024px) {
+        .card {
+          width: calc(50% - 20px); 
+        }
+      }
+      
+      @media (max-width: 768px) {
+        .card {
+          width: calc(100% - 20px); 
+        }
+      }
+
+      .btn-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60px; /* Establece una altura para el contenedor del botón */
+        margin-top: 20px; /* Añade un margen superior si es necesario */
+        padding: 10px 0; /* Añade padding verticalmente para más espacio si es necesario */
+        width: 100%; /* Asegúrate de que el contenedor tenga un ancho completo */
+    }
+    
+
+
+    .btn-index {
+        padding: 8px 16px; /* Un padding más pequeño para un botón más pequeño */
+        background-image: linear-gradient(45deg, #689cef, #7841c4); /* Gradiente inicial */
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        border: none;
+        border-radius: 25px; /* Bordes redondeados para el botón */
+        font-size: 14px; /* Un tamaño de fuente más pequeño */
+        font-weight: bold;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Sombra suave para efecto 3D */
+        transition: background-color 0.3s, box-shadow 0.3s; /* Transición suave para los efectos */
+        cursor: pointer;
+    }
+
+    .btn-index:hover {
+        background-image: linear-gradient(45deg, #7A55D3, #C884A6); /* Cambio del gradiente al pasar el ratón */
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); /* Sombra más pronunciada */
+    }
+
+    
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Active Directory (AD)</h1>
+  <p>Active Directory es un servicio de directorio que Microsoft desarrolló para las redes de Windows. Permite a los administradores gestionar permisos y acceder a recursos en una red. AD almacena información sobre objetos en la red y facilita esta información a usuarios y administradores. Esta funcionalidad incluye la gestión de identidades de usuarios y dispositivos, la autenticación y la autorización.
+  <br><br>Configuración paso a paso:</p>
+</header>
+
+<div class="container">
+<div class="card">
+  <img src="images/AD.jpg" alt="Paso1">
+  <div class="card-content">
+    <h2>Paso 1</h2>
+    <p>Entramos al Administrador del servidor y seleccionamos "Panel", después seleccionamos la opción "Agregar roles y características"</p>
+  </div>
+</div>
+
+<div class="card">
+  <img src="images/AD0.jpg" alt="Paso2">
+  <div class="card-content">
+    <h2>Paso 2</h2>
+    <p>Dentro del panel emergente se configurará cada una de las características. <br>En el primer apartado, damos click en Siguiente</p>
+  </div>
+</div>
+
+<div class="card">
+  <img src="images/AD1.jpg" alt="Paso3">
+  <div class="card-content">
+    <h2>Paso 3</h2>
+    <p>Seleccionamos el tipo de instalación basada en características o roles y damos click en Siguiente</p>
+  </div>
+</div>
+
+<div class="card">
+  <img src="images/AD2.jpeg" alt="Paso4">
+  <div class="card-content">
+    <h2>Paso 4</h2>
+    <p>Seleccionamos el servidor, en este caso seleccionamos el único que aparecer, por lo tanto lo seleccionamos y damos click en Siguiente</p>
+  </div>
+</div>
+
+
+
+<div class="card">
+        <img src="images/AD3.jpeg" alt="Paso5">
+        <div class="card-content">
+        <h2>Paso 5</h2>
+        <p>En el apartado "Roles del servidor", seleccionaremos "Servicios de dominio de Active Directory" y damos click en Siguiente</p>
+        </div>
+    </div>
+    
+    <div class="card">
+        <img src="images/AD4.jpg" alt="Paso6">
+        <div class="card-content">
+        <h2>Paso 6</h2>
+        <p>Para intalar el Rol de Active Directory, es necesario instalar algunas características, por lo tanto, solo damos click en "Agregar características" </p>
+        </div>
+    </div>
+    
+    <div class="card">
+        <img src="images/AD5.jpg" alt="Paso7">
+        <div class="card-content">
+        <h2>Paso 7</h2>
+        <p>En los servicios de dominio de Active Directory solo damos click en Siguiente</p>
+        </div>
+    </div>
+    
+    <div class="card">
+        <img src="images/AD6.jpg" alt="Paso8">
+        <div class="card-content">
+        <h2>Paso 8</h2>
+        <p>En el apartado de confirmación seleccionamos la opción de "Reiniciar automáticamente". <br>En la ventana emergente solo es necesario seleccionar "Si" y luego damos click en "Instalar"</p>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="card">
+        <img src="images/AD7.jpg" alt="Paso9">
+        <div class="card-content">
+        <h2>Paso 9</h2>
+        <p>Finalmente, en el apartado de "Progreso de instalación" solo es necesario hacer click en Cerrar</p>
+        </div>
+    </div>
+    
+    <div class="card">
+        <img src="images/AD8.jpeg" alt="Paso10">
+        <div class="card-content">
+        <h2>Paso 10</h2>
+        <p>Al cerrar la ventana, regresaremos al panel. En la parte superior derecha aparecerá una advertencia. Hacemos click en ella para terminar la configuración</p>
+        </div>
+    </div>
+    
+    <div class="card">
+        <img src="images/AD9.jpg" alt="Paso11">
+        <div class="card-content">
+        <h2>Paso 11</h2>
+        <p>En la ventana emergente, hacemos click en "Promover este servidor a controlador de dominio"</p>
+        </div>
+    </div>
+    
+    <div class="card">
+        <img src="images/AD10.jpg" alt="Paso12">
+        <div class="card-content">
+        <h2>Paso 12</h2>
+        <p>En la "Configuración de implementación" seleccionamos la opción de "Agregar un nuevo bosque" y escribimos el nombre del dominio que se desee, en nuestro caso será hdn.com</p>
+        </div>
+    </div>
+    
+  
+    <div class="card">
+        <img src="images/AD11.jpeg" alt="Paso13">
+        <div class="card-content">
+        <h2>Paso 13</h2>
+        <p>En el siguiente apartado, únicamente se crea una contraseña y se hace click en Siguiente</p>
+        </div>
+    </div>
+    
+    <div class="card">
+        <img src="images/AD12.jpg" alt="Paso14">
+        <div class="card-content">
+        <h2>Paso 14</h2>
+        <p>En el apartado de Opciones de DNS, no es necesario hacer nada, solo se da click en Siguiente</p>
+        </div>
+    </div>
+    
+    <div class="card">
+        <img src="images/AD13.jpg" alt="Paso15">
+        <div class="card-content">
+        <h2>Paso 15</h2>
+        <p>En "Opciones Adicionales" automáticamente se rellenará el campo con el nombre del dominio que pusimos anteriormente. A partir de aquí, solo es necesario hacer click en Siguiente hasta terminar el proceso de instalación. Al finalizar se reiniciará automáticamente el servidor</p>
+        </div>
+    </div>
+    
+    <div class="card">
+        <img src="images/AD14.jpg" alt="Paso16" style="object-fit: contain;">
+        <div class="card-content">
+        <h2>Paso 16</h2>
+        <p>Al enceder de nuevo, se debe ver una ventana de la manera en la que se muestra en la imagen, lo que significa que hemos terminado de instalarlo satisfactoriamente</p>
+        </div>
+    </div>
+
+
+    <div class="card">
+      <img src="images/AD15.jpeg" alt="Paso17" style="object-fit: contain;">
+      <div class="card-content">
+      <h2>Paso 17</h2>
+      <p>Ahora vamos a añadir un nuevo usuario al Active Directory. En el panel hacemos click en las herramientas en la esquina superior derecha y seleccionamos la opción "Usuarios y equipos de Active Directory"</p>
+      </div>
+  </div>
+  
+  <div class="card">
+      <img src="images/AD16.jpeg" alt="Paso18">
+      <div class="card-content">
+      <h2>Paso 18</h2>
+      <p>Seleccionamos la opción de nuestro dominio, en este caso "hdn.com"</p>
+      </div>
+  </div>
+  
+  <div class="card">
+      <img src="images/AD17.jpg" alt="Paso19">
+      <div class="card-content">
+      <h2>Paso 19</h2>
+      <p>Dentro del dominio, hacemos click derecho en "Users", después en la opción "Nuevo" seleccionamos "Usuario", esto para crear un nuevo usuario.</p>
+      </div>
+  </div>
+  
+  <div class="card">
+      <img src="images/AD18.jpg" alt="Paso20">
+      <div class="card-content">
+      <h2>Paso 20</h2>
+      <p>Nos aparecerá una ventana para crear el usuario, es necesario llenar nuestros datos. Una vez hecho eso hacer click en Siguiente</p>
+      </div>
+  </div>
+
+  <div class="card">
+    <img src="images/AD19.jpg" alt="Paso21">
+    <div class="card-content">
+    <h2>Paso 21</h2>
+    <p>En el siguiente apartado elegiremos una contraseña y seleccionamos la opción de "El usuario debe cambiar la contraseña en el siguietne inicio de sesión", esto para que el usuario pueda elegir una contraseña personal. Damos click en Siguiente</p>
+    </div>
+</div>
+
+<div class="card">
+    <img src="images/AD20.jpg" alt="Paso22">
+    <div class="card-content">
+    <h2>Paso 22</h2>
+    <p>Confirmamos nuestros datos y hacemos click en Finalizar</p>
+    </div>
+</div>
+
+
+
+</div>
+<div class="btn-container">
+    <a href="index.html" class="btn-index">Index</a>
+  </div>
+  
+</body>
+</html>
